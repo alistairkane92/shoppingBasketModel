@@ -37,7 +37,6 @@ public class TestShoppingBasket {
         basket.add(galaApples);
         basket.remove(galaApples);
         assertEquals(0, basket.getNumberOfItems());
-        assertEquals(50, basket.getCapacity());
     }
 
     @Test
@@ -45,7 +44,6 @@ public class TestShoppingBasket {
         basket.add(galaApples);
         basket.empty();
         assertEquals(0, basket.getNumberOfItems());
-        assertEquals(50, basket.getCapacity());
     }
 
 

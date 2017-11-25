@@ -15,8 +15,12 @@ public class ShoppingBasket {
         this.capacity = capacity;
     }
 
+    public ArrayList<ShopItem> getItems() {
+        return items;
+    }
+
     public void updateCapacity() {
-        this.capacity = this.capacity - getNumberOfItems();
+        this.capacity -= getNumberOfItems();
     }
 
     public int getCapacity() {

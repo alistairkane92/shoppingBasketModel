@@ -8,12 +8,13 @@ public class Customer {
     private String name;
     private int funds;
     private ShoppingBasket basket;
+    private boolean loyaltyCard;
 
-    public Customer(String name, int funds, ShoppingBasket basket) {
+    public Customer(String name, int funds, ShoppingBasket basket, boolean loyaltyCard) {
         this.name = name;
         this.funds = funds;
         this.basket = basket;
-
+        this.loyaltyCard = loyaltyCard;
     }
 
     public void addToBasket(ShopItem item){
@@ -28,5 +29,15 @@ public class Customer {
         this.basket.empty();
     }
 
+    public void setFunds(int funds) {
+        this.funds = funds;
+    }
 
+    public void pay(int amountToPay) {
+        setFunds(this.funds - amountToPay);
+    }
+
+    public int getFunds() {
+        return funds;
+    }
 }
