@@ -5,4 +5,13 @@ package com.example.user.shoppingbasket;
  */
 
 public class Till {
+    private int funds;
+
+    public void setFunds(int funds) {
+        this.funds = funds;
+    }
+
+
+
+
 }

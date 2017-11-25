@@ -8,9 +8,19 @@ import java.util.ArrayList;
 
 public class ShoppingBasket {
     private ArrayList<ShopItem> items;
+    private int capacity;
 
-    public ShoppingBasket(ArrayList<ShopItem> items) {
-        this.items = items;
+    public ShoppingBasket(int capacity){
+        this.items = new ArrayList<>();
+        this.capacity = capacity;
+    }
+
+    public void updateCapacity() {
+        this.capacity = this.capacity - getNumberOfItems();
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
     public void add(ShopItem shopItem) {
@@ -23,5 +33,9 @@ public class ShoppingBasket {
 
     public void remove(ShopItem shopItem) {
         this.items.remove(shopItem);
+    }
+
+    public void empty() {
+        this.items.clear();
     }
 }
