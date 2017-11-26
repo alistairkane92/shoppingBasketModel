@@ -2,8 +2,6 @@ package com.example.user.shoppingbasket;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 
 
@@ -14,17 +12,17 @@ import static org.junit.Assert.assertEquals;
 public class TestShoppingBasket {
 
     private ShoppingBasket basket = new ShoppingBasket(50);
-    private ShopItem galaApples = new ShopItem("Gala Apples", 3);
+    private ShopItem galaApples = new ShopItem("Gala Apples", 3, false);
 
     @Test
-    public void testBasketCanAddItem() throws Exception {
+    public void testBasketAddItem() throws Exception {
         basket.add(galaApples);
         basket.updateCapacity();
         assertEquals(1, basket.getNumberOfItems());
     }
 
     @Test
-    public void testUpdateBasketCapacity() throws Exception {
+    public void testBasketUpdateCapacity() throws Exception {
         basket.add(galaApples);
         basket.add(galaApples);
         basket.add(galaApples);
@@ -33,18 +31,16 @@ public class TestShoppingBasket {
     }
 
     @Test
-    public void testBasketCanRemoveItem() throws Exception {
+    public void testBasketRemoveItem() throws Exception {
         basket.add(galaApples);
         basket.remove(galaApples);
         assertEquals(0, basket.getNumberOfItems());
     }
 
     @Test
-    public void testBasketCanClearItems() throws Exception {
+    public void testBasketClearItems() throws Exception {
         basket.add(galaApples);
         basket.empty();
         assertEquals(0, basket.getNumberOfItems());
     }
-
-
 }

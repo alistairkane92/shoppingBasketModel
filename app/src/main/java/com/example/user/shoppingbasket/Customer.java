@@ -37,7 +37,15 @@ public class Customer {
         setFunds(this.funds - amountToPay);
     }
 
+    public boolean hasLoyaltyCard() {
+        return loyaltyCard;
+    }
+
     public int getFunds() {
         return funds;
+    }
+
+    public ShoppingBasket getBasket() {
+        return basket;
     }
 }

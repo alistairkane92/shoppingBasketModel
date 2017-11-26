@@ -5,12 +5,14 @@ package com.example.user.shoppingbasket;
  */
 
 public class ShopItem {
+    private boolean isBOGOF;
     private String name;
     private int price;
 
-    public ShopItem(String name, int price) {
+    public ShopItem(String name, int price, boolean isBOGOF) {
         this.name = name;
         this.price = price;
+        this.isBOGOF = isBOGOF;
     }
 
     public int getPrice() {
@@ -19,5 +21,9 @@ public class ShopItem {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public boolean isBOGOF() {
+        return isBOGOF;
     }
 }
